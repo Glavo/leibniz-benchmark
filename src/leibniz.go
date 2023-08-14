@@ -19,6 +19,7 @@ func calculate(rounds int) float64 {
 		pi += x / float64(2*i-1)
 	}
 
+	pi *= 4
 	return pi
 }
 
