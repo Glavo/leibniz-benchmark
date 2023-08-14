@@ -17,16 +17,8 @@ public class leibniz {
         return pi * 4;
     }
 
-    public static void main(String[] args) {
-        String data = "";
-
-        try {
-            data = Files.readString(Path.of("rounds.txt"));
-        } catch (IOException err) {
-            System.out.println("Couldn't read file:\n" + err.getMessage());
-        }
-
-        int rounds = Integer.parseInt(data.replace("\n", "").replace("\r", ""));
+    public static void main(String[] args) throws IOException {
+        int rounds = Integer.parseInt(Files.readString(Path.of("rounds.txt")));
 
         for (int i = 0; i < 10; i++) {
             long start = System.nanoTime();
